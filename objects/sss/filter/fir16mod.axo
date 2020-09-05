@@ -86,7 +86,7 @@ for(i=0;i<LENGTH*attr_presets;i++){
 	Array[i]=(int32_t)(GenerateRandomNumber())>>2;
 }]]></code.init>
       <code.krate><![CDATA[if(param_preset>=attr_presets){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_preset],attr_presets-1,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_preset],attr_presets-1,0xFFFD);
 }
 
 uint32_t soft;

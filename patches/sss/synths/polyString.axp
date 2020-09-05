@@ -95,58 +95,58 @@
          <code.krate><![CDATA[if(!(param_select==select)){
 
 switch(param_select>0?param_select:0){
-case 0: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2p,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2p,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2p,0xFFFD);break;
-case 1: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2t,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2t,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2t,0xFFFD);break;
-case 2: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2c,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2c,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2c,0xFFFD);break;
-case 3: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2m,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2m,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2m,0xFFFD);break;
-case 4: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2s,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2s,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2s,0xFFFD);break;
-case 5: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2i,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2i,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2i,0xFFFD);break;
-case 6: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2BPc,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2BPc,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2BPc,0xFFFD);break;
-case 7: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2BPr,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2BPr,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2BPr,0xFFFD);break;
+case 0: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2p,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2p,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2p,0xFFFD);break;
+case 1: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2t,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2t,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2t,0xFFFD);break;
+case 2: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2c,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2c,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2c,0xFFFD);break;
+case 3: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2m,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2m,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2m,0xFFFD);break;
+case 4: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2s,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2s,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2s,0xFFFD);break;
+case 5: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2i,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2i,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2i,0xFFFD);break;
+case 6: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2BPc,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2BPc,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2BPc,0xFFFD);break;
+case 7: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_note],	param_n2BPr,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_vel],	param_v2BPr,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_touch],	param_t2BPr,0xFFFD);break;
 }}
 
 
 switch(param_select>0?param_select:0){
-case 0: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2p],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2p],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2p],param_touch,0xFFFD);break;
-case 1: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2t],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2t],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2t],param_touch,0xFFFD);break;
-case 2: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2c],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2c],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2c],param_touch,0xFFFD);break;
-case 3: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2m],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2m],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2m],param_touch,0xFFFD);break;    	
-case 4: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2s],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2s],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2s],param_touch,0xFFFD);break;
-case 5: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2i],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2i],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2i],param_touch,0xFFFD);break;
-case 6: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2BPc],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2BPc],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2BPc],param_touch,0xFFFD);break;
-case 7: 	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2BPr],param_note,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2BPr],param_vel,0xFFFD);
-     	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2BPr],param_touch,0xFFFD);break;    
+case 0: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2p],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2p],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2p],param_touch,0xFFFD);break;
+case 1: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2t],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2t],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2t],param_touch,0xFFFD);break;
+case 2: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2c],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2c],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2c],param_touch,0xFFFD);break;
+case 3: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2m],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2m],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2m],param_touch,0xFFFD);break;
+case 4: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2s],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2s],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2s],param_touch,0xFFFD);break;
+case 5: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2i],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2i],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2i],param_touch,0xFFFD);break;
+case 6: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2BPc],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2BPc],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2BPc],param_touch,0xFFFD);break;
+case 7: 	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_n2BPr],param_note,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_v2BPr],param_vel,0xFFFD);
+     	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_t2BPr],param_touch,0xFFFD);break;
 }
 
 outlet_position	= ___SMMUL(param_n2p<<3,inlet_pitch<<2)+___SMMUL(param_v2p<<3,inlet_velocity<<2)+___SMMUL(param_t2p<<3,inlet_touch<<2);

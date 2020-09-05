@@ -159,10 +159,10 @@ int load=inlet_load+param_load;
 int stage=(param_stage-1)<<2;
 if((stage>>2)<attr_stages){
 if(!(stage+load==prev)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mode],array[stage],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_freq],array[stage+1],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_reso],array[stage+2],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gain],array[stage+3],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mode],array[stage],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_freq],array[stage+1],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_reso],array[stage+2],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gain],array[stage+3],0xFFFD);
 }
 
 array[stage]=param_mode;

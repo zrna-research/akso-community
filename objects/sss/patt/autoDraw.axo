@@ -260,7 +260,7 @@ pos1=pos1+diff>LENGTH?LENGTH-diff:pos1;
 if((param_do>0)&&!dtrig){
 dtrig=1;
 if(param_mode>0){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_curve],-param_curve,0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_curve],-param_curve,0xFFFD);
 }
 for(i=0;i<diff+1;i++){
 int32_t k=crat*i;
@@ -269,21 +269,21 @@ aut=out*Crat;
 array[(i+pos1)&LENGTHMASK]=__SSAT((lvl1+aut),28);
 }
 if(param_startPos<(1<<26)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startPos],(pos1-read+diff)<<20,0xFFFD);}
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startPos],(pos1-read+diff)<<20,0xFFFD);}
 if(param_startPos>=(1<<26)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startPos],param_startPos-(128<<18),0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_readout],param_readout+(128<<14)+(diff<<16),0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startPos],param_startPos-(128<<18),0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_readout],param_readout+(128<<14)+(diff<<16),0xFFFD);
 }
 pos1+=diff;
 }
-else if((param_do==0)&&dtrig){dtrig=0;if(param_keep==0){PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startLvl],array[(pos1)&LENGTHMASK],0xFFFD);}}
+else if((param_do==0)&&dtrig){dtrig=0;if(param_keep==0){ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startLvl],array[(pos1)&LENGTHMASK],0xFFFD);}}
 if(param_follow>0){
 if(!(prvS==pos1)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startLvl],array[pos1&LENGTHMASK],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endLvl],array[(pos1+diff)&LENGTHMASK],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startLvl],array[pos1&LENGTHMASK],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endLvl],array[(pos1+diff)&LENGTHMASK],0xFFFD);
 }
 if(!(prvE==diff+pos1)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endLvl],array[(pos1+diff)&LENGTHMASK],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endLvl],array[(pos1+diff)&LENGTHMASK],0xFFFD);
 }
 prvE=diff+pos1;
 prvS=pos1;

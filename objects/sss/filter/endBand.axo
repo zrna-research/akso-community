@@ -38,8 +38,8 @@ val4 = 0;]]></code.init>
    MTOF(param_LP,g);
 
 if(param_LP<param_HP){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_HP],param_LP,0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_LP],param_HP,0xFFFD);}]]></code.krate>
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_HP],param_LP,0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_LP],param_HP,0xFFFD);}]]></code.krate>
       <code.srate><![CDATA[val3 = ___SMMLA((inlet_inL-val3)<<1,g,val3);
    val4 = ___SMMLA((inlet_inR-val4)<<1,g,val4);
    int32_t temp=___SMMUL(inlet_inL-val3<<3,param_highshelf<<2)+val3;

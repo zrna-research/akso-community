@@ -100,22 +100,22 @@ if (adr != padr){changed = 1; padr = adr;}
 
 if (changed) {
 
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0],attr_table.array[__USAT((adr + 0),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],attr_table.array[__USAT((adr + 1),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2],attr_table.array[__USAT((adr + 2),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3],attr_table.array[__USAT((adr + 3),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4],attr_table.array[__USAT((adr + 4),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5],attr_table.array[__USAT((adr + 5),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6],attr_table.array[__USAT((adr + 6),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7],attr_table.array[__USAT((adr + 7),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8],attr_table.array[__USAT((adr + 8),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9],attr_table.array[__USAT((adr + 9),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10],attr_table.array[__USAT((adr + 10),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11],attr_table.array[__USAT((adr + 11),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12],attr_table.array[__USAT((adr + 12),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13],attr_table.array[__USAT((adr + 13),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14],attr_table.array[__USAT((adr + 14),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15],attr_table.array[__USAT((adr + 15),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0],attr_table.array[__USAT((adr + 0),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],attr_table.array[__USAT((adr + 1),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2],attr_table.array[__USAT((adr + 2),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3],attr_table.array[__USAT((adr + 3),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4],attr_table.array[__USAT((adr + 4),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5],attr_table.array[__USAT((adr + 5),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6],attr_table.array[__USAT((adr + 6),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7],attr_table.array[__USAT((adr + 7),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8],attr_table.array[__USAT((adr + 8),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9],attr_table.array[__USAT((adr + 9),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10],attr_table.array[__USAT((adr + 10),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11],attr_table.array[__USAT((adr + 11),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12],attr_table.array[__USAT((adr + 12),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13],attr_table.array[__USAT((adr + 13),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14],attr_table.array[__USAT((adr + 14),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15],attr_table.array[__USAT((adr + 15),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
 
 }
 

@@ -169,21 +169,21 @@ int load=param_load+inlet_load;
   else if(!(load>0)){ltrig=0;}
 
 if(!(prev==(select+param_load))){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Rchance],Array[256+Output],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Gchance],Array[260+Output],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Dwidth],Array[264+Output],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Rwidth],Array[268+Output],0xFFFD);
-MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,11,__USAT(Array[260+Output]>>20,7));	
-MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,10,__USAT(Array[256+Output]>>20,7));	
-MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,9,__USAT(Array[268+Output]>>20,7));	
-MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,8,__USAT(Array[264+Output]>>20,7));	
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Rchance],Array[256+Output],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Gchance],Array[260+Output],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Dwidth],Array[264+Output],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Rwidth],Array[268+Output],0xFFFD);
+MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,11,__USAT(Array[260+Output]>>20,7));
+MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,10,__USAT(Array[256+Output]>>20,7));
+MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,9,__USAT(Array[268+Output]>>20,7));
+MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,8,__USAT(Array[264+Output]>>20,7));
 
 for(i=0;i<16;i++){
 if(Array[i+select]>0){
-MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_NOTE_ON + 1,((i+8)&15)*2+97,64);	
+MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_NOTE_ON + 1,((i+8)&15)*2+97,64);
 }
 if(Array[i+select]==0){
-MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_NOTE_OFF + 1,((i+8)&15)*2+97,64);	
+MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_NOTE_OFF + 1,((i+8)&15)*2+97,64);
 }
 }
 

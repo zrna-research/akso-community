@@ -157,7 +157,7 @@ if ((save>0) && !strig) {
   	gtrig=1;
  for(i=0;i<(attr_table.Waveforms*attr_table.LENGTH);i++){
   array[i+(param_wavesReady*attr_table.LENGTH)]=attr_table.array[i];
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_wavesReady],param_wavesReady+attr_table.Waveforms,0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_wavesReady],param_wavesReady+attr_table.Waveforms,0xFFFD);
 }}
 else if(param_get==0){gtrig=0;}
 

@@ -60,10 +60,10 @@ if (nhooked) {
 	}
 } else {
 	outlet_out = inlet_in;
-	if (param_cache != param_value) 
+	if (param_cache != param_value)
 		nhooked = 4;
 	else
-		PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],inlet_in,0xFFFD);
+		ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],inlet_in,0xFFFD);
 		param_cache = inlet_in;
 }
 outlet_hooked = !nhooked;]]></code.krate>

@@ -52,10 +52,10 @@ int32_t temp;
    int32_t stepF;
    int32_t stepG;
    int32_t stepfb;]]></code.declaration>
-      <code.krate><![CDATA[if(param_max<param_min){	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_min],param_max,0xFFFD);
-						PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_max],param_min,0xFFFD);}
-if(param_LP<param_HP){	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_HP],param_LP,0xFFFD);
-						PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_LP],param_HP,0xFFFD);}
+      <code.krate><![CDATA[if(param_max<param_min){	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_min],param_max,0xFFFD);
+						ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_max],param_min,0xFFFD);}
+if(param_LP<param_HP){	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_HP],param_LP,0xFFFD);
+						ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_LP],param_HP,0xFFFD);}
 
 int32_t Max	=	param_max+inlet_max;
 int32_t Bias	=	param_bias+inlet_bias;

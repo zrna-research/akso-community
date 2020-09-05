@@ -10,7 +10,7 @@ Each step has 4 positions (white=chance0, light gray=chance1, dark gray=chance2 
 
 There&apos;s no internal storage memory, so the module loads banks from- and saves to table allocation module (size at least 4* 1024*(number of banks)  ).
 Because of this, there are no presets available when you use this module for the first time.
- 
+
  -Then first edit the bars of the sequencer to have a rhythm.
  -check whether you&apos;re saving to the right bar (&quot;bar&quot; selector)
  -check whether you&apos;ve saving to the right preset (&quot;seqwrite&quot; selector, for first timers, start with preset/slot 0).
@@ -21,17 +21,17 @@ Because of this, there are no presets available when you use this module for the
  -now select another BAR.
  -now EITHER:
              -press &quot;save&quot;, which will save the same sequence of the former bar to the next bar. Do this 2 times more and you&apos;ve filled your 64 step sequence.
- -OOOORRRRRR  
-             -in case the internal memory is empty at that spot, press load, and it will reset all the bars to zero. (This will be your &quot;first-time&quot; case, it will reset as there&apos;s no preset to    
+ -OOOORRRRRR
+             -in case the internal memory is empty at that spot, press load, and it will reset all the bars to zero. (This will be your &quot;first-time&quot; case, it will reset as there&apos;s no preset to
               load).
-             -in case the internal memory is NOT empty in the newly selected bar, but contains another sequence (previously loaded from a table or eddited before), it will load that sequence into 
+             -in case the internal memory is NOT empty in the newly selected bar, but contains another sequence (previously loaded from a table or eddited before), it will load that sequence into
               the sequence editor.
 
  -after editting all the BARS and saving them TO THE SAME(!!) &quot;seqwrite&quot; number, you can select a new &quot;seqwrite&quot;.
  -to start a fresh sequence (empty editor) and the internal memory is empty in the selected &quot;seqread&quot;, press &quot;load&quot; to quick-reset sequence.
  -if you already have a sequence in that position, and want to load that one, select the same number for &quot;seqread&quot; and press load for all the bars.
  -if you already have a sequence in that position but want to over-write it with another sequence (eg, your former sequence):
-        -This can be done quite quickly: select bar1, press &quot;load&quot;, press &quot;save&quot;, select next bar, press &quot;load&quot;, press &quot;save&apos;, etc. for the two other bars (takes you 4 seconds most with a 
+        -This can be done quite quickly: select bar1, press &quot;load&quot;, press &quot;save&quot;, select next bar, press &quot;load&quot;, press &quot;save&apos;, etc. for the two other bars (takes you 4 seconds most with a
          mouse..?)
         -then edit the copied bars one by one (select a bar, press load-&gt;loads into editor-&gt;edit sequence-&gt;press save-&gt;REPEAT WITH NEXT BAR)
 
@@ -49,7 +49,7 @@ Hope you read and added a &quot;save table&quot; module by now, as when you pres
 
 
 NOW THE FUN PART STARTS!
-All those boolean-inputs at the side?? 
+All those boolean-inputs at the side??
 
 -First one is of course for triggering the internal counter.
 -Counting modifications to bitswap/shift/logic, bit-invert and reverse (from current play position) the counter output with external sequences/controls. (internal counter itself is untouched, so it always goes back to where it should have been if  the modification wouldn&apos;t happen.)
@@ -331,10 +331,10 @@ positionwrite=bar*4+param_seqWrite*16;
 //load
 if((param_load>0)&&(!(ltrig)))
 {ltrig=1;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],array[positionread],((1<<32)-1));
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2],array[positionread+1],((1<<32)-1));
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3],array[positionread+2],((1<<32)-1));
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4],array[positionread+3],((1<<32)-1));}
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],array[positionread],((1<<32)-1));
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2],array[positionread+1],((1<<32)-1));
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3],array[positionread+2],((1<<32)-1));
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4],array[positionread+3],((1<<32)-1));}
 else if (!(param_load>0))
 {ltrig=0;}
 //save
@@ -413,8 +413,8 @@ int g3=(array[inlet_sequence*16+cranged+2]>>((Cranged)*2))&3;
 int g4=(array[inlet_sequence*16+cranged+3]>>((Cranged)*2))&3;
 outlet_pos16=Cranged;
 
-   if ((inlet_trig>0) && (!rndtrig)) 
-   { 
+   if ((inlet_trig>0) && (!rndtrig))
+   {
    rnd1 = (int32_t)(GenerateRandomNumber())>>4;
    rnd2 = (int32_t)(GenerateRandomNumber())>>4;
    rnd3 = (int32_t)(GenerateRandomNumber())>>4;
@@ -427,7 +427,7 @@ outlet_pos16=Cranged;
    rnda = (int32_t)(GenerateRandomNumber())>>4;
    rndb = (int32_t)(GenerateRandomNumber())>>4;
    rndc = (int32_t)(GenerateRandomNumber())>>4;
-  
+
    rndtrig=1;}
    else if (!(inlet_trig>0)) rndtrig=0;
 

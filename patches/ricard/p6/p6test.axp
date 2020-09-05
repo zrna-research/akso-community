@@ -125,7 +125,7 @@ if (first && attr_parhand.init_done) { // first time but wait for parhand to com
 		               i, kvp->keyname, kvp->ipvp.PEx->value >> 21, kvp->ipvp.minvalue >> 21, kvp->ipvp.maxvalue >> 21, attr_parhand.hash(kvp->keyname) & 0xffffff, kvp->ipvp.PEx->signals);
 	}
 }
-// To set parameter value, use PExParameterChange(kvp->ipvp.PEx, newvalue, signals <0xFFFFFFE7>)
+// To set parameter value, use ParameterChange(kvp->ipvp.PEx, newvalue, signals <0xFFFFFFE7>)
 #define read_data  buf
 if (inlet_read && !prev_rdtrig && state == NONE) {
 	unsigned int patch = param_patch >> 20;
@@ -160,7 +160,7 @@ if (state == READ_UNPACK) {
 			if (((hash ^ attr_parhand.param_data[pidx].name_hash) & 0xffffff) == 0) {
 				// hashes match: found it!
 				LogTextMessage("Found parameter: %s, value %d", attr_parhand.param_data[pidx].toplevel_kvpp->keyname, value >> 21);
-				PExParameterChange(attr_parhand.param_data[pidx].toplevel_kvpp->ipvp.PEx, value, 0xFFFFFFE7);
+				ParameterChange(attr_parhand.param_data[pidx].toplevel_kvpp->ipvp.PEx, value, 0xFFFFFFE7);
 				break;
 			}
 		}
@@ -311,7 +311,7 @@ prev_wrtrig = inlet_write;]]></code.krate>
 int init_done = 0;
 
 enum formats { F_POSNEG = -3, F_POS, F_DPOS, F_PNFULL, F_1, F_2, F_3, F_4, F_5, F_6, F_7, F_8, F_9, F_10, F_11, F12 };
-//             -64..+64       0..64  0..128 -64..+64 -> 0..128 
+//             -64..+64       0..64  0..128 -64..+64 -> 0..128
 // Formats with discrete string values
 struct type {
 	int values; // number of values for this format
@@ -343,7 +343,7 @@ struct ParamData
 // The order of parameter info in param_data is the same as in toplevel_kvp.
 struct ParamData param_data[NPEXCH];
 // The following two have been put in param_data[]
-//struct KeyValuePair *toplevel_kvpp[NPEXCH]; // pointers to kvp's, either to toplevel_kvp[foo], or to existing 
+//struct KeyValuePair *toplevel_kvpp[NPEXCH]; // pointers to kvp's, either to toplevel_kvp[foo], or to existing
 //u32 hashes[NPEXCH];
 
 /* djb2 string hash. */
@@ -379,18 +379,18 @@ __attribute__ ((noinline)) int par_dec(int par)
 	enum formats format = param_setup[par].format;
 	struct KeyValuePair *kvp = param_data[par].toplevel_kvpp;
 	if (!kvp) return 0;
-	KVP_Decrement(kvp); 
+	KVP_Decrement(kvp);
 	if (format == F_PNFULL && ((kvp->ipvp.PEx->value >> 20) & 1))
 		KVP_Decrement(kvp); // skip every second value so that 0..256 behaves as 0..128
 	return 1;
 }
 __attribute__ ((noinline)) void printval(char *str, int par)
-{     
+{
      int i = param_data[par].toplevel_kvpp->ipvp.PEx->value; // fetch current value
      enum formats format = param_setup[par].format;
 	int shift = (format == F_DPOS) ? 20 : 21;
 	i >>= shift;
-	
+
 	// handle string types
 	if (format > 0) {
 		int type = format - 1;
@@ -420,11 +420,11 @@ __attribute__ ((noinline)) void printval(char *str, int par)
 		if (digit) { *str++ = '0' + digit; digits++; } else *str++ = ' ';
 		i -= digit * 100;
 	}
-	
+
 	digit = i / 10;
 	if (digit || digits) { *str++ = '0' + digit; digits++; } else *str++ = ' ';
 	i -= digit * 10;
-	
+
 	*str++ = '0' + i;
 	*str = '\0';
 }]]></code.declaration>
@@ -632,15 +632,15 @@ LogTextMessage("# params at init time: %d\n", ObjectKvpRoot->apvp.length);]]></c
   { "osc1 modsrc", "mix_3:gain2", "lp1:bend", "lp1:sync", "lp1:mod", "lp1:level" } },
 { "MIX  Lv1 Lv2 Lv3",
   { NULL, "osc1 lvl", "osc2 lvl", "osc3 lvl", NULL, NULL } },
-{ "FILT Frq Res Env Kbd", 
+{ "FILT Frq Res Env Kbd",
   { NULL, "f1 frq","f1 q","f1 envamt","f1 kbdtrk",NULL } },
-{ "FENV Atk Dec Sus Rel Val", 
+{ "FENV Atk Dec Sus Rel Val",
   { NULL, "fenv a","fenv d","fenv s","fenv r", "f1 envamt"  } },
-{ "AENV Atk Dec Sus Rel Val", 
+{ "AENV Atk Dec Sus Rel Val",
   { NULL, "aenv a","aenv d","aenv s","aenv r", "vol"  } },
 { "LFO  Frq Pha Wav Dst Lvl",
   { NULL, "lfo frq", "lfo pha", "lfo wav", "lfo dst", "lfo lvl" } },
-{ "ARP  Bpm", 
+{ "ARP  Bpm",
   { NULL, "bpm", NULL, NULL, NULL, NULL } },
 { "GLOB Tun Voc MCh Loc Vol",
   { NULL, NULL, NULL, NULL, NULL, NULL } },
@@ -698,7 +698,7 @@ if (parnos[N] >= 0) { \
 // local functions
 __attribute__ ((noinline)) void printpar(int par)
 {
-	char *str = &printstring[5 * par]; 
+	char *str = &printstring[5 * par];
 	//printval(str + 1, kvps[par]->ipvp.PEx->value, formats[par]);
 	attr_parhand.printval(str + 1, parnos[par]);
 	attr_lcdctrl.print(str);
@@ -989,7 +989,7 @@ else {
 	outlet_trig = 0;
 	if (newdown) {
 		debounce_counter = 3 * 50; // 50 ms
-		LogTextMessage("Button(s) down 0x%x", newdown);	
+		LogTextMessage("Button(s) down 0x%x", newdown);
 		for (int i = 0; i < sizeof(transitions)/sizeof(struct transition); i++) {
 			const struct transition *transition = &transitions[i];
 			if (transition->state == -1 || transition->state == cur_state) {

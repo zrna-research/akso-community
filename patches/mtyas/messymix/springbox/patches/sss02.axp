@@ -129,7 +129,7 @@ ratio=(float32_t)BPMctrl/BPMbase;
 if(param_link<1){
 freq=freq*ratio;
 }
-else{PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_BPMbase],param_BPMctrl,0xFFFD);BPMbase=BPMctrl;}
+else{ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_BPMbase],param_BPMctrl,0xFFFD);BPMbase=BPMctrl;}
 	bool reset=param_reset||inlet_reset;
       if (reset && r) {
       outlet_rst=1;
@@ -158,7 +158,7 @@ if((uint32_t)Phase<phs){
 
 
 if((PHS>swing)&&!trg){
-	trg=1;	
+	trg=1;
 	cnt=(cnt+1);
 	cnt=cnt>=param_measureSwing?0:cnt;
 	int32_t deviate=((int32_t)(param_deviate*0.999)<<4);
@@ -293,11 +293,11 @@ int32_t vi30=(1<<30)-1;]]></code.declaration>
 sum=param_p0+param_p1+param_p2+param_p3+param_p4;
 float32_t ratio=(float32_t)v27/sum;
 if(!(sum==PRV)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p0],param_p0*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p1],param_p1*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p2],param_p2*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p3],param_p3*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p4],param_p4*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p0],param_p0*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p1],param_p1*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p2],param_p2*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p3],param_p3*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p4],param_p4*ratio,0xFFFD);
 
 }
 sum=param_p0+param_p1+param_p2+param_p3+param_p4;
@@ -338,7 +338,7 @@ if((GEN>0)&&!gen){
 		//int16_t tmp=___SMMUL((int32_t)(data[pos][1]-1)<<2,(int32_t)(GenerateRandomNumber()&((1<<30)-1)))+1;
 		data[i+1][1]=data[pos][1]-tmp;
 		data[i+1][0]=data[pos][0]+tmp;
-		data[pos][1]=tmp;	
+		data[pos][1]=tmp;
 	}
 }
 else if(GEN==0)
@@ -847,7 +847,7 @@ for(i=0;i<29;i++){
 	w[i]=___SMMUL(env[i],w[i]);
 	hp[i]+=w[i]-hp[i]>>7;
 	w[i]-=hp[i];
-	
+
 	outlet_out+=___SMMUL(w[i],A[i])>>1;
 	lp[i]+=___SMMUL((w[i])-lp[i],dmp[i])<<1;
 	w[i]=lp[i];

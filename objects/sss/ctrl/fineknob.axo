@@ -25,28 +25,28 @@ int reset;]]></code.declaration>
       <code.init><![CDATA[reset=1;]]></code.init>
       <code.krate><![CDATA[if(reset==1)
 {
-	
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_int],(param_mem>>21)<<21,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_frac],(param_mem<<10)>>4,0xFFFD);
+
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_int],(param_mem>>21)<<21,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_frac],(param_mem<<10)>>4,0xFFFD);
 //	mem=param_mem2;
 	reset=0;
 }
 
 if(param_frac==((1<<27)-1))
 {
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_frac],1,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_int],((param_int>>21)<<21)+(1<<21),0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_frac],1,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_int],((param_int>>21)<<21)+(1<<21),0xFFFD);
 //	mem=param_mem2;
 }
 if(param_frac==0)
 {
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_frac],((1<<27)-2),0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_int],((param_int>>21)<<21)-(1<<21),0xFFFD);	
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_frac],((1<<27)-2),0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_int],((param_int>>21)<<21)-(1<<21),0xFFFD);
 //	mem=param_mem2;
 }
 
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mem],(param_frac>>6)+((param_int>>21)<<21),0xFFFD);
-//	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mem2],mem,0xFFFD);	
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mem],(param_frac>>6)+((param_int>>21)<<21),0xFFFD);
+//	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mem2],mem,0xFFFD);
 outlet_out=param_mem;
 
 if(outlet_out>0)

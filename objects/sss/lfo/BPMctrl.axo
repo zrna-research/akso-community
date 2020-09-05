@@ -54,7 +54,7 @@ ratio=(float32_t)param_BPMctrl/param_BPMbase;
 if(param_link>0){
 freq=freq*ratio;
 }
-else{PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_BPMbase],param_BPMctrl,0xFFFD);}
+else{ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_BPMbase],param_BPMctrl,0xFFFD);}
 outlet_pitch=FTOM(freq);
 outlet_BPM=param_BPMctrl;]]></code.krate>
    </obj.normal>

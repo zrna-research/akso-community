@@ -24,8 +24,8 @@ uint8_t out;]]></code.declaration>
       <code.krate><![CDATA[out = param_value;
 if (inlet_set && (!ntrig)){
 	ntrig = 1;
-	out = inlet_setTo %4;	
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],out, 0xFFFD);
+	out = inlet_setTo %4;
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],out, 0xFFFD);
 }
 
 if (!inlet_set) ntrig = 0;

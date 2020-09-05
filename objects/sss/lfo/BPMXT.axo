@@ -115,7 +115,7 @@ ratio=(float32_t)BPMctrl/BPMbase;
 if(param_link<1){
 freq=freq*ratio;
 }
-else{PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_BPMbase],param_BPMctrl,0xFFFD);BPMbase=BPMctrl;}
+else{ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_BPMbase],param_BPMctrl,0xFFFD);BPMbase=BPMctrl;}
 	bool reset=param_reset||inlet_reset;
       if (reset && r) {
       outlet_rst=1;
@@ -144,11 +144,11 @@ if((uint32_t)Phase<phs){
 
 
 if((PHS>swing)&&!trg){
-	trg=1;	
+	trg=1;
 	CNT=(CNT+1);
 	cnt=cnt>=(param_measureSwing*param_sync)?0:cnt;
 	cnt=CNT/param_measureSwing;
-	
+
 	int32_t deviate=((int32_t)(param_deviate*0.999)<<2);
 	int32_t mash=((int32_t)(param_mash*0.999)<<2);
 	int32_t stretch=((int32_t)(param_stretch*0.999)<<2);

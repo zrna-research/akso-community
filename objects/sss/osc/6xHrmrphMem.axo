@@ -83,13 +83,13 @@ int trg;]]></code.declaration>
 	case 0:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_FMW],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_FMW],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -97,13 +97,13 @@ int trg;]]></code.declaration>
 	case 1:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Walk],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Walk],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -111,27 +111,27 @@ int trg;]]></code.declaration>
 	case 2:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_SprdM],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_SprdM],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
-   	
+
 	case 3:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Sprd1],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Sprd1],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -139,13 +139,13 @@ int trg;]]></code.declaration>
 	case 4:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Sprd2],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Sprd2],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -153,13 +153,13 @@ int trg;]]></code.declaration>
 	case 5:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_SprdE],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_SprdE],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -167,13 +167,13 @@ int trg;]]></code.declaration>
 	case 6:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_AM],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_AM],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -181,13 +181,13 @@ int trg;]]></code.declaration>
 	case 7:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Step1],(inlet_in>>19)+257,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Step1],(inlet_in>>19)+257,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -195,13 +195,13 @@ int trg;]]></code.declaration>
 	case 8:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Step2],(inlet_in>>19)+256,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Step2],(inlet_in>>19)+256,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -209,13 +209,13 @@ int trg;]]></code.declaration>
 	case 9:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Range],(inlet_in>>19)+257,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Range],(inlet_in>>19)+257,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -223,13 +223,13 @@ int trg;]]></code.declaration>
 	case 10:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Minimum],(inlet_in>>19)+257,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Minimum],(inlet_in>>19)+257,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -237,13 +237,13 @@ int trg;]]></code.declaration>
 	case 11:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Algo],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Algo],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -251,13 +251,13 @@ int trg;]]></code.declaration>
 	case 12:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftStep],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftStep],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -265,13 +265,13 @@ int trg;]]></code.declaration>
 	case 13:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftHalf],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftHalf],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -279,13 +279,13 @@ int trg;]]></code.declaration>
 	case 14:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftSec],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftSec],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;
@@ -293,13 +293,13 @@ int trg;]]></code.declaration>
 	case 15:
 		if((inlet_trg>0)&&(trg!=1))
 		{trg=1;
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftThr],inlet_in,0xFFFD);
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ShiftThr],inlet_in,0xFFFD);
 		}
 		else
 		{
 			if(inlet_trg==0)
 			{
-			trg=0;	
+			trg=0;
 			}
 		}
 	break;

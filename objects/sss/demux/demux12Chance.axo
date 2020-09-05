@@ -72,18 +72,18 @@ if(param_chance>0){
 sum=param_p0+param_p1+param_p2+param_p3+param_p4+param_p5+param_p6+param_p7+param_p8+param_p9+param_p10+param_p11;
 float32_t ratio=(float32_t)v27/sum;
 if(!(sum==prv)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p0],param_p0*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p1],param_p1*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p2],param_p2*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p3],param_p3*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p4],param_p4*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p5],param_p5*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p6],param_p6*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p7],param_p7*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p8],param_p8*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p9],param_p9*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p10],param_p10*ratio,0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p11],param_p11*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p0],param_p0*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p1],param_p1*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p2],param_p2*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p3],param_p3*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p4],param_p4*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p5],param_p5*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p6],param_p6*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p7],param_p7*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p8],param_p8*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p9],param_p9*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p10],param_p10*ratio,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p11],param_p11*ratio,0xFFFD);
 }
 sum=param_p0+param_p1+param_p2+param_p3+param_p4+param_p5+param_p6+param_p7+param_p8+param_p9+param_p10+param_p11;
 val[0]=param_p0;

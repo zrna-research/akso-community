@@ -157,7 +157,7 @@ int32_t func(int S,int A,int B,int I){
 		case 10: array[I]=array[A]^(!array[B]);break;
 		case 11: array[I]=(!array[A])^array[B];break;
 	}
-	
+
 }]]></code.declaration>
       <code.krate><![CDATA[bool R=param_rnd||inlet_rnd;
 if(((R)>0)&&!rnd){
@@ -165,13 +165,13 @@ if(((R)>0)&&!rnd){
 	for(i=0;i<28;i++){
 		if(i<8){
 			if((int32_t)(GenerateRandomNumber()>>1)<param_chance){
-			PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_f1+i],(int32_t)(GenerateRandomNumber()%12),0xFFFD);}
+			ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_f1+i],(int32_t)(GenerateRandomNumber()%12),0xFFFD);}
 		}
 		if(i>7){
 		int k=i-8;
 		k=k>15?15:k;
 		if((int32_t)(GenerateRandomNumber()>>1)<param_chance){
-		PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_f1+i],(int32_t)(GenerateRandomNumber()%(4+(k>>1))),0xFFFD);	}
+		ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_f1+i],(int32_t)(GenerateRandomNumber()%(4+(k>>1))),0xFFFD);	}
 		}
 	}
 }
@@ -190,7 +190,7 @@ func(param_f5,array[param_5a],array[param_5b],4);
 func(param_f6,array[param_6a],array[param_6b],5);
 func(param_f7,array[param_7a],array[param_7b],6);
 func(param_f8,array[param_8a],array[param_8b],7);
-	
+
 }
 outlet_o1=array[param_o1];
 outlet_o2=array[param_o2];

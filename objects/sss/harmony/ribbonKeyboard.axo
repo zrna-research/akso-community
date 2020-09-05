@@ -42,7 +42,7 @@ if(!((inlet_key+inlet_scale)==prv)){
 		k=k<0?k+32:k;
 	trg=(!(attr_scalebank.note[m+inlet_scale*12]==m));
 	cur+=trg<<k;}
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],cur,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],cur,0xFFFD);
 }
 
 outlet_trg=0;
@@ -59,7 +59,7 @@ outlet_note=ch;
 
 disp_val=tmp;
 
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],cur,0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],cur,0xFFFD);
 
 prv=inlet_key+inlet_scale;]]></code.krate>
    </obj.normal>

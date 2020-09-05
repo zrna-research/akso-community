@@ -188,7 +188,7 @@
        *              ParameterExchange_t *pex = (ParameterExchange_t *)origin->finalvalue;
        *              int vi;
        *              for (vi = 0; vi < 3; vi++) {
-       *                PExParameterChange(pex,origin->modvalue,0xFFFFFFEE);
+       *                ParameterChange(pex,origin->modvalue,0xFFFFFFEE);
        *                  pex = (ParameterExchange_t *)((int)pex + sizeof(voice)); // dirty trick...
        *              }
        *        }
@@ -656,7 +656,7 @@
 
         /*
          *  Read the parameters from the file and write them to the patch
-         *  PExParameterChange() signaling mask:
+         *  ParameterChange() signaling mask:
          *    0x00000001 -> USB parameter exchange
          *    0x00000002 -> DIN MIDI port
          *    0x00000004 -> Display
@@ -670,7 +670,7 @@
             if( err != FR_OK )
               return err;
             DEBUGF("preset_manager::preset_load_subpatch_v1(): param_i = %d, 0x%08x", param_i, value );
-            PExParameterChange( &parent->PExch[param_i], value, PRESET_MANAGER_PE_SIGNAL_MASK );
+            ParameterChange( &parent->PExch[param_i], value, PRESET_MANAGER_PE_SIGNAL_MASK );
           }
 
         return FR_OK;
@@ -716,7 +716,7 @@
             if( global_index >= 0 )
               {
                 DEBUGF( "preset_manager::preset_load_global(): PARAM_LOADED OK => name = '%s', value = 0x%08x", ObjectKvps[global_index]->keyname, pair[1] );
-                PExParameterChange( ObjectKvps[global_index]->ipvp.PEx, pair[1], PRESET_MANAGER_PE_SIGNAL_MASK );
+                ParameterChange( ObjectKvps[global_index]->ipvp.PEx, pair[1], PRESET_MANAGER_PE_SIGNAL_MASK );
               }
             else
               {
@@ -785,7 +785,7 @@
                   )
                   {
                     DEBUGF( "preset_manager::preset_load_subpatch(): PARAM LOADED OK => name = '%s', value = 0x%08x", ObjectKvps[global_i]->keyname, pair[1] );
-                    PExParameterChange( &parent->PExch[patch_i], pair[1], PRESET_MANAGER_PE_SIGNAL_MASK );
+                    ParameterChange( &parent->PExch[patch_i], pair[1], PRESET_MANAGER_PE_SIGNAL_MASK );
                     param_found = true;
                     n_loaded_params++;
                   }

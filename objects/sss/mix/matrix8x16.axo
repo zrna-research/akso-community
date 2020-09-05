@@ -130,7 +130,7 @@ if((param_clear>0)&&!ctrig){ctrig=1;for(i=0;i<128;i++){array[i]=0;}}else if(para
 
 //load setting
 if(!(prev==(param_source+param_destiny+param_clear+param_load))){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gain],array[param_source+param_destiny*8],0xFFFD);}
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gain],array[param_source+param_destiny*8],0xFFFD);}
 prev=param_source+param_destiny+param_clear+param_load;
 
 //save setting

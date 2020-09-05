@@ -404,7 +404,7 @@ int32_t channel,i,pattern;]]></code.declaration>
       <code.krate><![CDATA[if((load>0)&&!ld){
 	ld=1;
 	for(i=0;i<96;i++){
-		PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_1+i],attr_table.array[channel*96+i+pattern]<<20,0xFFFD);
+		ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_1+i],attr_table.array[channel*96+i+pattern]<<20,0xFFFD);
 	}
 }
 else if(load<1){ld=0;}

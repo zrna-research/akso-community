@@ -109,7 +109,7 @@ if(!(DO==(next>>3))){
 	cnt=0;
 	last=select;
 	select=next>>3;
-	
+
 	MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_NOTE_ON + 1,select<<1,64);
 	MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_NOTE_OFF + 1,last<<1,64);
 }
@@ -118,9 +118,9 @@ if(!(param_control==pv)){
 MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 1, MIDI_CONTROL_CHANGE ,3,__USAT((param_control>>20),8));}
 
 if(!(select==prev)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_control],__USAT(array[select],28),0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_control],__USAT(array[select],28),0xFFFD);
 }
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Vdec+select],__USAT(param_control,28),0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_Vdec+select],__USAT(param_control,28),0xFFFD);
 
 PLFO+=inlet_timing*((param_rate>>22)+1)*inlet_Xrate;
 int32_t LFO;
@@ -216,18 +216,18 @@ wave= __SSAT(___SMMUL(__SSAT(___SMMUL(sine>>3,sineLvl)+(__SSAT(___SMMUL(mix<<1,L
 val=___SMMLA((wave-val)<<1,cut,val);
 outlet_out=val>>1;]]></code.srate>
       <code.midihandler><![CDATA[if ((status == 0 + MIDI_CONTROL_CHANGE)&&(data1==10)) {
-	
-     
+
+
 	if(data2==1){
 		next+=1;
-		
+
 		}
 	if(data2==127){
 		next-=1;
 		}
 	next=next-next/152*152;
 	next=next<0?next+152:next;
-		
+
 	}]]></code.midihandler>
    </obj.normal>
 </objdefs>

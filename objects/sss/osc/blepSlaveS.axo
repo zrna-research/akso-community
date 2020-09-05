@@ -106,8 +106,8 @@ int32_t octPst[8][8]=
       <code.init><![CDATA[int j;
 	for(i=0;i<stack;i++){
     for(j=0;j<blepvoices;j++){
-      oscp[i][j] = &blept[BLEPSIZE-1];   
-      nextvoice[i] = 0; 
+      oscp[i][j] = &blept[BLEPSIZE-1];
+      nextvoice[i] = 0;
       i0[i] = 0;
       }
        for(j=0;j<8;j++){
@@ -116,11 +116,11 @@ int32_t octPst[8][8]=
       }]]></code.init>
       <code.krate><![CDATA[if(param_stack>attr_maxStack)
 {
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_stack],attr_maxStack,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_stack],attr_maxStack,0xFFFD);
 }
 if(param_syncs>attr_maxStack)
 {
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_syncs],attr_maxStack,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_syncs],attr_maxStack,0xFFFD);
 }
 int stack=param_stack>attr_maxStack?attr_maxStack:param_stack;
 attr_core.pst=inlet_hrmPst&15;

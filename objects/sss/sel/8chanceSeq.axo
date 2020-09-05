@@ -121,7 +121,7 @@ int i;
 
 if(!(prv==P+load)){
 	for(i=0;i<8;i++){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_1+i],array[i+P],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_1+i],array[i+P],0xFFFD);
 }
 }
 
@@ -150,7 +150,7 @@ gate[6]=select[param_7>>(inlet_count<<1)&3]>((int32_t)(GenerateRandomNumber()>>5
 gate[7]=select[param_8>>(inlet_count<<1)&3]>((int32_t)(GenerateRandomNumber()>>5))?1:0;
 }
 
- 
+
 
 outlet_1=gate[0]&&inlet_gate;
 outlet_2=gate[1]&&inlet_gate;

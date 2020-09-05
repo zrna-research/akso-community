@@ -47,7 +47,7 @@ if (nhooked) {
 		nhooked = 4;
 		unhook = 0;
 	} else {
-		PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],inlet_in,0xFFFD);
+		ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],inlet_in,0xFFFD);
 		param_cache = inlet_in;
 	}
 }

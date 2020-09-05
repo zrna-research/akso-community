@@ -73,7 +73,7 @@ if(!(param_pattern==prv)){
 bool next=param_next||inlet_next;
 bool NEW=param_new||inlet_new;
 if((NEW>0)&&!nw){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_pattern],pos,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_pattern],pos,0xFFFD);
 	nw=1;
 	//get=0;
 	ofs=0;

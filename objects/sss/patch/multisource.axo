@@ -4,41 +4,41 @@
 updates automatically when input changes</sDescription>
       <author>Remco van der Most</author>
       <license>BSD</license>
-      
+
 <ModulationSources>
-         
+
 <string>M1</string>
-         
+
 <string>M2</string>
-         
+
 <string>M3</string>
-         
+
 <string>M4</string>
- 
+
 <string>M5</string>
-         
+
 <string>M6</string>
-         
+
 <string>M7</string>
-         
+
 <string>M8</string>
-    
+
 <string>M9</string>
-         
+
 <string>M10</string>
-         
+
 <string>M11</string>
-         
+
 <string>M12</string>
-    
+
 <string>M13</string>
-         
+
 <string>M14</string>
-         
+
 <string>M15</string>
-         
+
 <string>M16</string>
-         
+
 </ModulationSources>
       <inlets>
          <frac32 name="1" description="value"/>
@@ -81,7 +81,7 @@ int32_t prev16;]]></code.declaration>
       <code.krate><![CDATA[int32_t temp=inlet_1;
 if(!(prev01==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M1*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -92,7 +92,7 @@ prev01=temp;
 temp=inlet_2;
 if(!(prev02==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M2*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -103,7 +103,7 @@ prev02=temp;
 temp=inlet_3;
 if(!(prev03==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M3*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -114,7 +114,7 @@ prev03=temp;
 temp=inlet_4;
 if(!(prev04==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M4*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -128,7 +128,7 @@ prev04=temp;
 temp=inlet_5;
 if(!(prev05==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M5*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -139,7 +139,7 @@ prev05=temp;
 temp=inlet_6;
 if(!(prev06==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M6*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -150,7 +150,7 @@ prev06=temp;
 temp=inlet_7;
 if(!(prev07==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M7*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -161,7 +161,7 @@ prev07=temp;
 temp=inlet_8;
 if(!(prev08==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M8*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -175,7 +175,7 @@ prev08=temp;
 temp=inlet_9;
 if(!(prev09==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M9*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -186,7 +186,7 @@ prev09=temp;
 temp=inlet_10;
 if(!(prev10==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M10*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -197,7 +197,7 @@ prev10=temp;
 temp=inlet_11;
 if(!(prev11==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M11*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -208,7 +208,7 @@ prev11=temp;
 temp=inlet_12;
 if(!(prev12==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M12*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -222,7 +222,7 @@ prev12=temp;
 temp=inlet_13;
 if(!(prev13==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M13*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -233,7 +233,7 @@ prev13=temp;
 temp=inlet_14;
 if(!(prev14==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M14*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -244,7 +244,7 @@ prev14=temp;
 temp=inlet_15;
 if(!(prev15==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M15*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -255,7 +255,7 @@ prev15=temp;
 temp=inlet_16;
 if(!(prev16==temp))
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_M16*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],

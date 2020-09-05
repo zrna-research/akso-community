@@ -91,10 +91,10 @@ void PushHandleDevice(Push& p, uint8_t status, uint8_t data1,uint8_t data2)  {
         else  {
             // push sends 0 for all encoders when it first connects
             if(p._displayParamBars==0) return;
-            
+
             p._displayParamBars--;
         }
-        
+
         if(p._displayParamBars>0) {
             PushDisplayBars(p,ObjectKvpRoot);
         } else {
@@ -110,7 +110,7 @@ void PushDisplayParams(Push& p, KeyValuePair_s* parent) {
     const char * txt = parent->keyname;
     uint8_t numobjs = PushNumParamObjects(parent);
 //    PushDbgLog("PushDP 1  %s, %i",txt,numobjs);
-    
+
     PushClearRow(p,2);
     PushClearRow(p,3);
 
@@ -137,7 +137,7 @@ void PushDisplayBars(Push& p, KeyValuePair_s* parent) {
     uint8_t devParamPos = p._deviceParamPos;
     const char * txt = parent->keyname;
     uint8_t numobjs = PushNumParamObjects(parent);
-    
+
     uint8_t len = devParamPos+LED_CELLS > numobjs? numobjs-devParamPos : LED_CELLS;
     PushLockLedRow(p,2,true);
     for(uint8_t i = 0; i<len;i++) {
@@ -156,7 +156,7 @@ void PushParamValue(Push& p, uint8_t c, KeyValuePair_s* kvp) {
 void PushParamBar(Push& p, uint8_t c, KeyValuePair_s* kvp) {
     // move into block function
     int32_t max = (kvp->ipvp.maxvalue) >> 20;
-    int32_t min = (kvp->ipvp.minvalue) >> 20; 
+    int32_t min = (kvp->ipvp.minvalue) >> 20;
     int32_t val = (kvp->ipvp.PEx->value) >> 20;
     if(min>=0) {
         val = (val*128) / (max - min);
@@ -191,29 +191,29 @@ void PushUpdateParamValue(Push& p, KeyValuePair_s* parent, uint8_t encoder, int8
     uint8_t devParamPos = p._deviceParamPos;
     uint8_t objidx = devParamPos + encoder;
     uint8_t numobjs = PushNumParamObjects(parent);
-    
+
     if(objidx > numobjs) return; // ignore
-    
+
     KeyValuePair_s* kvp = PushGetParamObject(ObjectKvpRoot,objidx);
     // either 0.1 or velocity to move by
-    int32_t amt = (p._shiftHeld ? (0x64 << 7) :  (vel>0?vel:vel*-1) << 21); 
+    int32_t amt = (p._shiftHeld ? (0x64 << 7) :  (vel>0?vel:vel*-1) << 21);
     switch(kvp->kvptype) {
         case KVP_TYPE_IPVP: {
             if ( vel > 0 ) {
                 int32_t nval = kvp->ipvp.PEx->value + amt;
                 if (nval < kvp->ipvp.maxvalue) {
-                  PExParameterChange(kvp->ipvp.PEx, nval, 0xFFFFFFE7);
+                  ParameterChange(kvp->ipvp.PEx, nval, 0xFFFFFFE7);
                 }
                 else {
-                  PExParameterChange(kvp->ipvp.PEx, kvp->ipvp.maxvalue, 0xFFFFFFE7);
+                  ParameterChange(kvp->ipvp.PEx, kvp->ipvp.maxvalue, 0xFFFFFFE7);
                 }
             } else {
                 int32_t nval = kvp->ipvp.PEx->value - amt;
                 if (nval > kvp->ipvp.minvalue) {
-                  PExParameterChange(kvp->ipvp.PEx, nval, 0xFFFFFFE7);
+                  ParameterChange(kvp->ipvp.PEx, nval, 0xFFFFFFE7);
                 }
                 else {
-                  PExParameterChange(kvp->ipvp.PEx, kvp->ipvp.minvalue, 0xFFFFFFE7);
+                  ParameterChange(kvp->ipvp.PEx, kvp->ipvp.minvalue, 0xFFFFFFE7);
                 }
             }
             PushParamValue(p,encoder,kvp);
@@ -250,4 +250,3 @@ void PushUpdateParamValue(Push& p, KeyValuePair_s* parent, uint8_t encoder, int8
     }
     return i;
 */
-

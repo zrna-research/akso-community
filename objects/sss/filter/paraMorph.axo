@@ -253,10 +253,10 @@ else if(param_rnd==0){rtrig=0;}
 int stage=(param_stage-1)<<2;
 if(param_stage<=attr_stages){
 if(!(stage+load+param_slot+param_rnd==prev)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mode],array[stage+preset],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_freq],array[stage+1+preset],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_reso],array[stage+2+preset],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gain],array[stage+3+preset],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mode],array[stage+preset],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_freq],array[stage+1+preset],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_reso],array[stage+2+preset],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gain],array[stage+3+preset],0xFFFD);
 }
 
 array[stage+preset]=param_mode;

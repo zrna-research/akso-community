@@ -147,7 +147,7 @@ else if(upd&&!inlet_update){upd=0;}
 if((!((param_part-1<<3)==part))||DO){
 	part=param_part-1<<3;
 	for(i=0;i<8;i++){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_preset+i],array[part+i]+(!(i==5)?1:0),0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_preset+i],array[part+i]+(!(i==5)?1:0),0xFFFD);
 	}
 	if(DO){DO=0;}
 }
@@ -184,7 +184,7 @@ for(i=0;i<8;i++){
 	total+=array[part+i];
 }
 if((!(ptotal==total))&&(param_part>param_lastpart)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_lastpart],param_part,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_lastpart],param_part,0xFFFD);
 }
 
 

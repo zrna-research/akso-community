@@ -81,10 +81,10 @@ int dtrig;]]></code.declaration>
 
 if(!(prev==NOTE+attr_core.load))
 {
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_i0],attr_core.array[NOTE],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_i0],attr_core.array[NOTE],0xFFFD);
 	for(i=1;i<12;i++)
 	{
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_i0+i],attr_core.array[i+NOTE]-attr_core.array[i-1+NOTE],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_i0+i],attr_core.array[i+NOTE]-attr_core.array[i-1+NOTE],0xFFFD);
 	}
 }
 

@@ -19,19 +19,19 @@ prev0 = 0;
 
 ]]></code.init>
       <code.krate><![CDATA[if ((inlet_s == 0) && (inlet_in0 != prev0)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_0_value],inlet_in0,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_0_value],inlet_in0,0xFFFD);
 }
 
 if ((inlet_s == 1) && (inlet_in0 != prev0)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_1_value],inlet_in0,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_1_value],inlet_in0,0xFFFD);
 }
 
 if ((inlet_s == 2) && (inlet_in0 != prev0)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_2_value],inlet_in0,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_2_value],inlet_in0,0xFFFD);
 }
 
 if ((inlet_s == 3) && (inlet_in0 != prev0)){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_3_value],inlet_in0,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_3_value],inlet_in0,0xFFFD);
 }
 
 prev0 = inlet_in0 ;

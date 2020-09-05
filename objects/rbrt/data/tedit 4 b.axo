@@ -33,10 +33,10 @@ if (inlet_offset != padr){changed = 1; padr = inlet_offset;}
 
 if (changed) {
 changed = 0;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0],attr_table.array[__USAT((inlet_offset + 0),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],attr_table.array[__USAT((inlet_offset + 1),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2],attr_table.array[__USAT((inlet_offset + 2),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3],attr_table.array[__USAT((inlet_offset + 3),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0],attr_table.array[__USAT((inlet_offset + 0),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],attr_table.array[__USAT((inlet_offset + 1),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2],attr_table.array[__USAT((inlet_offset + 2),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3],attr_table.array[__USAT((inlet_offset + 3),attr_table.LENGTHPOW)]<<attr_table.GAIN, 0xFFFD) ;
 }
 
 if (prevp [0] != param_b0) { attr_table.array[inlet_offset + 0]= param_b0 >> attr_table.GAIN; prevp [0] = param_b0 ; }

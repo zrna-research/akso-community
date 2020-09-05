@@ -86,22 +86,22 @@ int pos2;
 preset=param_preset<<4;
 
 if(!(prevpreset==preset)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startsample],attr_settings.array[preset],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startpitch],attr_settings.array[preset+1],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startStrt],attr_settings.array[preset+2],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startEnd],attr_settings.array[preset+3],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopsample],attr_settings.array[preset+4],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_looppitch],attr_settings.array[preset+5],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopStrt],attr_settings.array[preset+6],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopEnd],attr_settings.array[preset+7],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopmode],attr_settings.array[preset+8],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_LOOP],attr_settings.array[preset+9],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endsample],attr_settings.array[preset+10],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endpitch],attr_settings.array[preset+11],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endStrt],attr_settings.array[preset+12],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endEnd],attr_settings.array[preset+13],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_samplelength],attr_settings.array[preset+14],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_FMwidth],attr_settings.array[preset+15],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startsample],attr_settings.array[preset],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startpitch],attr_settings.array[preset+1],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startStrt],attr_settings.array[preset+2],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_startEnd],attr_settings.array[preset+3],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopsample],attr_settings.array[preset+4],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_looppitch],attr_settings.array[preset+5],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopStrt],attr_settings.array[preset+6],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopEnd],attr_settings.array[preset+7],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_loopmode],attr_settings.array[preset+8],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_LOOP],attr_settings.array[preset+9],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endsample],attr_settings.array[preset+10],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endpitch],attr_settings.array[preset+11],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endStrt],attr_settings.array[preset+12],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_endEnd],attr_settings.array[preset+13],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_samplelength],attr_settings.array[preset+14],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_FMwidth],attr_settings.array[preset+15],0xFFFD);
 }
 
 if(!(attr_settings.array[0]==param_startsample)){
@@ -189,13 +189,13 @@ if(!(param_endsample+enstart+end==prevES)){
 }
 
 if((generate>0)&&!gtrig){
-gtrig=1;	
+gtrig=1;
 for(i=0;i<128;i++){
 	sum[i]=0;}
 
 for(i=0;i<128;i++){
 	int32_t Sum=0;
-for(j=0;j<samplemask;j++){	
+for(j=0;j<samplemask;j++){
 	int32_t temp=((attr_samples.array[(j+i*samplemask)+sample*samplelength])<<attr_samples.GAIN)>>12;
 	int32_t tamp=temp;
 	temp=temp>0?temp:-temp;

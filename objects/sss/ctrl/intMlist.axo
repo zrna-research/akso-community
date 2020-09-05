@@ -48,11 +48,11 @@ _channel = 1;
 _value = 0;
 ntrig = 0;]]></code.init>
       <code.krate><![CDATA[if(DO>0){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],_value,0xFFFD);}
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],_value,0xFFFD);}
 DO=0;
 
 if(param_value>list[2]-1){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],list[2]-1,0xFFFD);	
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],list[2]-1,0xFFFD);
 }
 
 outlet_value=list[param_value+3];]]></code.krate>

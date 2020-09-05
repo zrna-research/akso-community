@@ -309,7 +309,7 @@ void ApplyPreset(int index){
      int i;
      int32_t *p = GetInitParams();
      for(i=0;i<NPEXCH;i++){
-        PExParameterChange(&PExch[i],p[i],0xFFEF);
+        ParameterChange(&PExch[i],p[i],0xFFEF);
      }
    }
    index--;
@@ -320,13 +320,13 @@ void ApplyPreset(int index){
        for(i=0;i<NPRESET_ENTRIES;i++){
          PresetParamChange_t *pp = &p[i];
          if ((pp->pexIndex>=0)&&(pp->pexIndex<NPEXCH)) {
-           PExParameterChange(&PExch[pp->pexIndex],pp->value,0xFFEF);         }
+           ParameterChange(&PExch[pp->pexIndex],pp->value,0xFFEF);         }
          else break;
        }
    }
 }
    static PExModulationTarget_t * GetModulationTable(void){
-    static const PExModulationTarget_t PExModulationSources[NMODULATIONSOURCES][NMODULATIONTARGETS] = 
+    static const PExModulationTarget_t PExModulationSources[NMODULATIONSOURCES][NMODULATIONTARGETS] =
 {{{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0}},
 {{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0}},
 {{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0},{-1,0}},

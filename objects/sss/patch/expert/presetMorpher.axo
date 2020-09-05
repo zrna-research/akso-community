@@ -77,7 +77,7 @@ DO=0;
 
 
 if(param_preset>=presets){
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_preset],presets-1,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_preset],presets-1,0xFFFD);
 }
 P=param_preset+inlet_preset;
 P=P-P/presets*presets;
@@ -102,7 +102,7 @@ else if(GET==0){get=0;}
 if(A>0)
 	{
 		for(j=0;j<params;j++)
-		{	
+		{
 			if(!(pst[P+j]==parent->PExch[j+pre].value))
 			{
 				if(!(pv==A))
@@ -120,7 +120,7 @@ if(A>0)
 				{
 					tmp=tmp<pst[P+j]?pst[P+j]:tmp;
 				}
-				PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value+j+6],tmp,0xFFFD);
+				ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value+j+6],tmp,0xFFFD);
 			}
 		}
 	}
@@ -133,7 +133,7 @@ if((param_rnd>0)&&!rnd){
 		pst[i*params+j]=(int32_t)GenerateRandomNumber()>>4;
 	}
 	}
-		
+
 }
 else if(param_rnd==0){rnd=0;}
 outlet_pre=pre;

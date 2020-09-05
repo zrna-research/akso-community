@@ -19,7 +19,7 @@ inlet &apos;reset&apos; resets control to zero</sDescription>
       <code.declaration><![CDATA[uint32_t prev;]]></code.declaration>
       <code.krate><![CDATA[if (inlet_v != prev){
      prev = inlet_v;
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],prev, 0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],prev, 0xFFFD);
 }
 outlet_out = param_value;]]></code.krate>
    </obj.normal>

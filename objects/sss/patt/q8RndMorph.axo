@@ -159,7 +159,7 @@ for(i=0;i<LENGTH;i++){
 int32_t quant1=(param_quant>>21)+1;
 if((param_next>0)&&!ntrig){
 	ntrig=1;
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mix],param_mix+(1<<27)/quant1,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mix],param_mix+(1<<27)/quant1,0xFFFD);
 }
 else if(param_next==0){ntrig=0;}
 
@@ -168,7 +168,7 @@ int rnd=param_rnd+inlet_rnd;
 if((rnd>0)&&!rtrig){
 	rtrig=1;
 	for(i=0;i<attr_presets;i++){
-	
+
 	for(j=0;j<8;j++){
 	array[j+(i<<3)]=((int32_t)GenerateRandomNumber())>>16;}
 	}
@@ -179,12 +179,12 @@ else if (rnd==0){rtrig=0;}
 if(!(prev==param_CV)){
 	if(MIX1a>=(1<<29)){
 		array[param_channel+(W[1]<<3)]=param_CV>>12;
-		
+
 	}
 	else if(MIX1a<(1<<29)){
 		array[param_channel+(W[0]<<3)]=param_CV>>12;
 	}
-	
+
 }
 
 disp_update=0;

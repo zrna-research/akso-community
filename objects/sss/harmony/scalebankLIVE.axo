@@ -36,7 +36,7 @@ D=1;]]></code.init>
       <code.krate><![CDATA[NT=inlet_notes>0?inlet_notes:1;
 if(D){
 	D=0;
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_scale],(1<<12)-1,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_scale],(1<<12)-1,0xFFFD);
 	notes=0;
 }
 if((inlet_clear>0)&&!clr){
@@ -61,19 +61,19 @@ if((inlet_gate>0)&&!trg){
 	if(inlet_delete>0){
 		if(array[sel]>0){
 		notes-=1;
-		array[sel]=0;	
+		array[sel]=0;
 		}
 	}
 	else if((inlet_delete==0)&&(array[sel]==0)){
 	notes+=1;
 	array[sel]=notes;
 	}}
-	
+
 	int32_t tmp=0;
 	for(i=0;i<12;i++){
 		tmp+=((array[i]>0)?1:0)<<i;
 	}
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_scale],tmp,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_scale],tmp,0xFFFD);
 
 }
 else if(inlet_gate<1){trg=0;}

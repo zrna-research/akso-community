@@ -143,15 +143,15 @@ int load=param_load+inlet_load;
 
 
 
-if(param_part>=attr_parts){PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_part],attr_parts-1,0xFFFD);}
+if(param_part>=attr_parts){ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_part],attr_parts-1,0xFFFD);}
 int32_t part=param_part*32;
 int32_t param=param_pattern<<2;
 int32_t patt=param+part;
 if(!(prev==patt)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_qnt],array[patt],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_lng],array[patt+1],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_rng],array[patt+2],0xFFFD);
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_stp],array[patt+3],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_qnt],array[patt],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_lng],array[patt+1],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_rng],array[patt+2],0xFFFD);
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_stp],array[patt+3],0xFFFD);
 }
 if((inlet_trig>0)&&!gtrig){
 array[patt]=param_qnt;

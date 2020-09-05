@@ -39,7 +39,7 @@ int32_t frac_exp(int32_t a) {
 	else return expt[ei]>>(-s);
 }]]></code.declaration>
       <code.krate><![CDATA[if(param_tresh<(param_soft>>1)){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_tresh],param_soft>>1,0xFFFD);}
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_tresh],param_soft>>1,0xFFFD);}
 
 int32_t soft=___SMMUL(param_tresh<<3,param_soft<<1)+(8<<21);
 int32_t treshlog = frac_log(param_tresh-soft);

@@ -45,13 +45,13 @@ midichannel=param_midichannel;]]></code.krate>
   _note = data1-64;
   _gate = 1<<27;
   _gate2 = 0;
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_velocity*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
     &parent->PExModulationPrevVal[parent->polyIndex][parent->MODULATOR_attr_name_velocity],
     _velo<<20);
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_note*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],
@@ -62,7 +62,7 @@ midichannel=param_midichannel;]]></code.krate>
   if (_note == data1-64) {
     _rvelo = data2;
     _gate = 0;
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name_releasevelocity*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],

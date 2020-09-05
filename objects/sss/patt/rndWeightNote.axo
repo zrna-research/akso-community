@@ -13,7 +13,7 @@
 
 inputs:
 -trig: updates the &quot;random&quot; output to a new random value depending on the random-weight of each note.
--rnd: randomises the internal tables (set length with &quot;maxlength&quot; attribute and the amount of tables with the &quot;maxpatterns&quot; attribute). 
+-rnd: randomises the internal tables (set length with &quot;maxlength&quot; attribute and the amount of tables with the &quot;maxpatterns&quot; attribute).
 -count: connect a counter or pattern generator to step through the randomised table. Count will be wrapped when above &quot;length&quot;.
 -length: set the maximum value till where the incoming count/pattern-output will come. Maximum is &quot;maxlength&quot; attribute.
 -maxOct: sets the maximum octave which the randomised or repeating note outputs can reach.
@@ -132,7 +132,7 @@ int32_t temp;]]></code.declaration>
       <code.init><![CDATA[static uint32_t _chance[LENGTH] __attribute__ ((section (".sdram")));
 chance = &_chance[0];
 
-  
+
 
 init=1;
 ntrig=0;
@@ -197,19 +197,19 @@ int change=chancepatt+inlet_load;
 
 if(!(change==prvchance))
 {
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_B],chance[12+chancepatt]-chance[11+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ais],chance[11+chancepatt]-chance[10+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_A],chance[10+chancepatt]-chance[9+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gis],chance[9+chancepatt]-chance[8+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_G],chance[8+chancepatt]-chance[7+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_fis],chance[7+chancepatt]-chance[6+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_F],chance[6+chancepatt]-chance[5+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_E],chance[5+chancepatt]-chance[4+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_dis],chance[4+chancepatt]-chance[3+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_D],chance[3+chancepatt]-chance[2+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_cis],chance[2+chancepatt]-chance[1+chancepatt],0xFFFD);
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_C],chance[1+chancepatt],0xFFFD);
-	
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_B],chance[12+chancepatt]-chance[11+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_ais],chance[11+chancepatt]-chance[10+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_A],chance[10+chancepatt]-chance[9+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_gis],chance[9+chancepatt]-chance[8+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_G],chance[8+chancepatt]-chance[7+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_fis],chance[7+chancepatt]-chance[6+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_F],chance[6+chancepatt]-chance[5+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_E],chance[5+chancepatt]-chance[4+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_dis],chance[4+chancepatt]-chance[3+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_D],chance[3+chancepatt]-chance[2+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_cis],chance[2+chancepatt]-chance[1+chancepatt],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_C],chance[1+chancepatt],0xFFFD);
+
 }
 
 

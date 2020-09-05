@@ -51,7 +51,7 @@ if(!(count==prav)){
 if(!(param_value==array[prav])){
 array[count]=__USAT(param_value,27);}
 else
-{PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],array[count],0xFFFD);}
+{ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_value],array[count],0xFFFD);}
 out=array[count];
 }
 prav=count;

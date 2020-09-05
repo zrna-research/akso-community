@@ -14,9 +14,9 @@
       <code.declaration><![CDATA[int ntrig;
 int32_t in_old;]]></code.declaration>
       <code.init><![CDATA[in_old = 0;]]></code.init>
-      <code.krate><![CDATA[if (inlet_v!=in_old) 
+      <code.krate><![CDATA[if (inlet_v!=in_old)
 {
-  PExModulationSourceChange(
+  ModulationSourceChange(
     &parent->GetModulationTable()[parent->MODULATOR_attr_name*NMODULATIONTARGETS],
     NMODULATIONTARGETS,
     &parent->PExch[0],

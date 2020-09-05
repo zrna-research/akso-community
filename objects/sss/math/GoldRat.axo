@@ -46,13 +46,13 @@ int ntrig;
 int ptrig;]]></code.declaration>
       <code.krate><![CDATA[if((param_next>0)&&!ntrig){
 	ntrig=1;
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_size],ratioS[0],0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_size],ratioS[0],0xFFFD);
 }
 else if(param_next==0){ntrig=0;}
 
 if((param_prev>0)&&!ptrig){
 	ptrig=1;
-	PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_size],param_size*Gratio2,0xFFFD);
+	ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_size],param_size*Gratio2,0xFFFD);
 }
 else if(param_prev==0){ptrig=0;}
 

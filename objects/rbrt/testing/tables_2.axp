@@ -103,7 +103,7 @@ static const uint32_t BITS = 32;
 static const uint32_t GAIN = 0;
 int32_t array[LENGTH];
 ]]></code.declaration>
-         <code.init><![CDATA[{ 
+         <code.init><![CDATA[{
   int i;
   for(i=0;i<LENGTH;i++) array[i]=0;}]]></code.init>
          <code.krate><![CDATA[array[0] = param_b0;
@@ -717,7 +717,7 @@ disp_d31 = (array [31] >> 1) + (1 << 26);]]></code.krate>
          </params>
          <attribs/>
          <includes/>
-         <code.krate><![CDATA[PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p1],-134217728,0xFFFD);]]></code.krate>
+         <code.krate><![CDATA[ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_p1],-134217728,0xFFFD);]]></code.krate>
       </object>
    </patchobj>
    <patchobj type="patch/object" uuid="23ef9d9b-a8ab-4633-a69b-1d1de9664a5f" name="t5" x="364" y="448">
@@ -855,62 +855,62 @@ array[15] = param_b15;
 
 if (param_saw && (!trig)) {
 	trig = 1;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0] ,-134217728.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1], -116322032.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2] ,-98426336.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3], -80530640.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4] ,-62634940.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5] ,-44739244.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6] ,-26843546.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7] ,-8947849.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8] ,8947849.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9] ,26843546.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10] ,44739244.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11] ,62634940.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12], 80530640.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13] ,98426336.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14], 116322032.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15] ,134217728.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0] ,-134217728.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1], -116322032.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2] ,-98426336.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3], -80530640.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4] ,-62634940.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5] ,-44739244.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6] ,-26843546.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7] ,-8947849.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8] ,8947849.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9] ,26843546.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10] ,44739244.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11] ,62634940.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12], 80530640.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13] ,98426336.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14], 116322032.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15] ,134217728.000 ,0xFFFD) ;
 }
 
 if (param_sine && (!trig)) {
 	trig = 1;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0], 0.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1], 51361464.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2] ,94904064.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3] ,123999224.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4] ,134217728.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5] ,124003984.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6] ,94912864.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7], 51372956.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8] ,12436.267 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9] ,-51349976.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10] ,-94895272.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11] ,-123994464.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12] ,-134217728.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13] ,-124008744.000 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14] ,-94921656.000, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15], -51384444.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0], 0.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1], 51361464.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2] ,94904064.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3] ,123999224.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4] ,134217728.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5] ,124003984.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6] ,94912864.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7], 51372956.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8] ,12436.267 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9] ,-51349976.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10] ,-94895272.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11] ,-123994464.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12] ,-134217728.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13] ,-124008744.000 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14] ,-94921656.000, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15], -51384444.000, 0xFFFD) ;
 }
 
 if (param_square && (!trig)) {
 	trig = 1;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0],134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],134217728, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2] ,134217728, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3] ,134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4] ,134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5] ,134217728, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6] ,134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7], 134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8] ,-134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9] ,-134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10] ,-134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11] ,-134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12] ,-134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13] ,-134217728 ,0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14] ,-134217728, 0xFFFD) ;
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15], -134217728, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b0],134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b1],134217728, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b2] ,134217728, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b3] ,134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b4] ,134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b5] ,134217728, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b6] ,134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b7], 134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b8] ,-134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b9] ,-134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b10] ,-134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b11] ,-134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b12] ,-134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b13] ,-134217728 ,0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b14] ,-134217728, 0xFFFD) ;
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_b15], -134217728, 0xFFFD) ;
 }
 
 if (!param_sine && !param_saw && !param_square) trig = 0;]]></code.krate>

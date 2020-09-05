@@ -52,9 +52,9 @@ attr_a.pan[mod]=___SMMUL(pan<<3,gain);
 attr_a.ccomp[mod]=___SMMUL(((1<<27)-pan)<<3,gain);
 
 if(attr_a.MUTE>0){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mute],0,0xFFFD);}
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_mute],0,0xFFFD);}
 if(attr_a.SOLO>0){
-PExParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_solo],0,0xFFFD);}
+ParameterChange(&parent->PExch[PARAM_INDEX_attr_legal_name_solo],0,0xFFFD);}
 ]]></code.krate>
    </obj.normal>
 </objdefs>
