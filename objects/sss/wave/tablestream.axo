@@ -121,9 +121,9 @@ int32_t sample;
 int sm;
 bool em,load;
 int32_t *END;]]></code.declaration>
-      <code.init><![CDATA[static sdReadFilePingpong s[attr_poly] __attribute__ ((section (".data")));
+      <code.init><![CDATA[static sdReadFilePingpong s[attr_poly] SDMMC_MEM_FW;
 // unmap from aliased memory for DMA
-stream = (sdReadFilePingpong *)(0x20000000 | (int)&s[parent->polyIndex]);
+stream = &s[parent->polyIndex];
 stream->pingpong = CLOSED;
 stream->doSeek = 0;
 stream->offset = -1;
@@ -137,7 +137,7 @@ static int16_t _array[LENGTH*SAMPLES] __attribute__ ((section (".sdram")));
 array = &_array[0];
 static int32_t _END[SAMPLES] __attribute__ ((section (".sdram")));
 END = &_END[0];
-{ 
+{
   int i;
   if(attr_init>0){
   for(i=0;i<(LENGTH*SAMPLES);i++) array[i]=0;
@@ -151,9 +151,9 @@ sample=inlet_sample;
 sm=sample=sample&(SAMPLES-1);
 sample=sample*LENGTH;
      if ((start>0) && !starttrig) {
-     	
-     	
-     	
+
+
+
         sdOpenStream(stream,inlet_filename);
         sdSeekStream(stream,0);
         starttrig=1;
@@ -164,11 +164,13 @@ sample=sample*LENGTH;
      int16_t *p = 0;
    //  int16_t *q = 0;
      p=sdReadStream(stream);
+     SCB_InvalidateICache();
+     SCB_CleanInvalidateDCache();
      if (p) {
      	em=0;
      	load=1;
         for(i=0;i<BUFSIZE;i++){
-        	if(cnt<LENGTH){   
+        	if(cnt<LENGTH){
            array[cnt+sample] = (*(p++));
            cnt+=1;
         	}
@@ -200,7 +202,7 @@ sample=sample*LENGTH;
      	load=0;
      	}
      disp_load=load;
-     
+
      outlet_ended=!load;]]></code.krate>
    </obj.normal>
 </objdefs>
